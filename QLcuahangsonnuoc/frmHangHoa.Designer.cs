@@ -48,6 +48,8 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -161,7 +163,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(722, 285);
+            this.dataGridView1.Size = new System.Drawing.Size(794, 285);
             this.dataGridView1.TabIndex = 9;
             // 
             // btnThem
@@ -228,7 +230,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer1.Size = new System.Drawing.Size(722, 522);
+            this.splitContainer1.Size = new System.Drawing.Size(794, 522);
             this.splitContainer1.SplitterDistance = 164;
             this.splitContainer1.TabIndex = 15;
             // 
@@ -246,7 +248,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(722, 164);
+            this.splitContainer2.Size = new System.Drawing.Size(794, 164);
             this.splitContainer2.SplitterDistance = 47;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -269,8 +271,8 @@
             this.splitContainer3.Panel2.Controls.Add(this.label4);
             this.splitContainer3.Panel2.Controls.Add(this.label5);
             this.splitContainer3.Panel2.Controls.Add(this.txtTenHang);
-            this.splitContainer3.Size = new System.Drawing.Size(722, 113);
-            this.splitContainer3.SplitterDistance = 364;
+            this.splitContainer3.Size = new System.Drawing.Size(794, 113);
+            this.splitContainer3.SplitterDistance = 400;
             this.splitContainer3.TabIndex = 0;
             // 
             // splitContainer4
@@ -287,7 +289,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer4.Size = new System.Drawing.Size(722, 354);
+            this.splitContainer4.Size = new System.Drawing.Size(794, 354);
             this.splitContainer4.SplitterDistance = 285;
             this.splitContainer4.TabIndex = 10;
             // 
@@ -298,19 +300,42 @@
             this.flowLayoutPanel1.Controls.Add(this.btnTimKiem);
             this.flowLayoutPanel1.Controls.Add(this.btnSua);
             this.flowLayoutPanel1.Controls.Add(this.btnThem);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(64, 8, 64, 8);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(722, 65);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(794, 65);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(67, 50);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 33);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Lưu";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(183, 50);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(110, 33);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Reset";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // frmHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(722, 522);
+            this.ClientSize = new System.Drawing.Size(794, 522);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmHang";
             this.Text = "frmHang";
@@ -361,5 +386,7 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

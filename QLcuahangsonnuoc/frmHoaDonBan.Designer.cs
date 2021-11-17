@@ -32,17 +32,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -57,6 +52,15 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.total = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -93,7 +97,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label2.Location = new System.Drawing.Point(29, 12);
+            this.label2.Location = new System.Drawing.Point(29, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 16);
             this.label2.TabIndex = 1;
@@ -101,7 +105,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(133, 12);
+            this.textBox1.Location = new System.Drawing.Point(133, 8);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(260, 20);
             this.textBox1.TabIndex = 2;
@@ -111,18 +115,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label3.Location = new System.Drawing.Point(29, 66);
+            this.label3.Location = new System.Drawing.Point(29, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 16);
             this.label3.TabIndex = 3;
             this.label3.Text = "Mã Khách";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(133, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(260, 20);
-            this.textBox2.TabIndex = 4;
             // 
             // label4
             // 
@@ -140,7 +137,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label5.Location = new System.Drawing.Point(24, 46);
+            this.label5.Location = new System.Drawing.Point(22, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 16);
             this.label5.TabIndex = 6;
@@ -151,7 +148,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label6.Location = new System.Drawing.Point(29, 112);
+            this.label6.Location = new System.Drawing.Point(29, 120);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 16);
             this.label6.TabIndex = 7;
@@ -169,41 +166,16 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Tổng Tiền";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label8.Location = new System.Drawing.Point(24, 83);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 16);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "VAT";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label9.Location = new System.Drawing.Point(24, 119);
+            this.label9.Location = new System.Drawing.Point(24, 136);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 16);
             this.label9.TabIndex = 10;
             this.label9.Text = "Thành Tiền";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(133, 112);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(260, 20);
-            this.textBox3.TabIndex = 11;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(136, 9);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(260, 20);
-            this.textBox4.TabIndex = 12;
             // 
             // textBox5
             // 
@@ -212,16 +184,9 @@
             this.textBox5.Size = new System.Drawing.Size(260, 20);
             this.textBox5.TabIndex = 13;
             // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(136, 82);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(260, 20);
-            this.textBox6.TabIndex = 14;
-            // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(136, 119);
+            this.textBox7.Location = new System.Drawing.Point(136, 135);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(260, 20);
             this.textBox7.TabIndex = 15;
@@ -331,23 +296,27 @@
             // 
             // splitContainer3.Panel1
             // 
+            this.splitContainer3.Panel1.Controls.Add(this.comboBox2);
+            this.splitContainer3.Panel1.Controls.Add(this.comboBox1);
+            this.splitContainer3.Panel1.Controls.Add(this.label10);
+            this.splitContainer3.Panel1.Controls.Add(this.dateTimePicker1);
             this.splitContainer3.Panel1.Controls.Add(this.textBox1);
-            this.splitContainer3.Panel1.Controls.Add(this.textBox2);
-            this.splitContainer3.Panel1.Controls.Add(this.textBox3);
             this.splitContainer3.Panel1.Controls.Add(this.label2);
             this.splitContainer3.Panel1.Controls.Add(this.label3);
             this.splitContainer3.Panel1.Controls.Add(this.label6);
             // 
             // splitContainer3.Panel2
             // 
+            this.splitContainer3.Panel2.Controls.Add(this.textBox3);
+            this.splitContainer3.Panel2.Controls.Add(this.textBox2);
+            this.splitContainer3.Panel2.Controls.Add(this.label11);
+            this.splitContainer3.Panel2.Controls.Add(this.label8);
+            this.splitContainer3.Panel2.Controls.Add(this.comboBox3);
             this.splitContainer3.Panel2.Controls.Add(this.label4);
             this.splitContainer3.Panel2.Controls.Add(this.label5);
-            this.splitContainer3.Panel2.Controls.Add(this.label8);
             this.splitContainer3.Panel2.Controls.Add(this.label9);
-            this.splitContainer3.Panel2.Controls.Add(this.textBox4);
             this.splitContainer3.Panel2.Controls.Add(this.textBox5);
             this.splitContainer3.Panel2.Controls.Add(this.textBox7);
-            this.splitContainer3.Panel2.Controls.Add(this.textBox6);
             this.splitContainer3.Size = new System.Drawing.Size(822, 159);
             this.splitContainer3.SplitterDistance = 403;
             this.splitContainer3.TabIndex = 0;
@@ -410,6 +379,84 @@
             this.total.TabIndex = 25;
             this.total.Text = "10 trịu";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(133, 119);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(260, 20);
+            this.dateTimePicker1.TabIndex = 8;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label10.Location = new System.Drawing.Point(29, 87);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 16);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Mã Nhân Viên";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(132, 82);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(260, 21);
+            this.comboBox1.TabIndex = 11;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(132, 42);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(260, 21);
+            this.comboBox2.TabIndex = 12;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(136, 8);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(260, 21);
+            this.comboBox3.TabIndex = 16;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label8.Location = new System.Drawing.Point(24, 77);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 16);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Tên Hàng";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label11.Location = new System.Drawing.Point(26, 107);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 16);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Đơn Giá ";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(136, 73);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(260, 20);
+            this.textBox2.TabIndex = 19;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(136, 107);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(260, 20);
+            this.textBox3.TabIndex = 20;
+            // 
             // frmHoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,17 +501,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
@@ -479,5 +521,14 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label total;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label8;
     }
 }
