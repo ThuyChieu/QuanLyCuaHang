@@ -43,9 +43,9 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 19);
+            this.label1.Size = new System.Drawing.Size(79, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "TÀI KHOẢN";
+            this.label1.Text = "Tài Khoản";
             // 
             // label2
             // 
@@ -53,15 +53,15 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(15, 132);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 19);
+            this.label2.Size = new System.Drawing.Size(78, 19);
             this.label2.TabIndex = 1;
-            this.label2.Text = "MẬT KHẨU";
+            this.label2.Text = "Mật Khẩu";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(143, 20);
+            this.label3.Location = new System.Drawing.Point(151, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 32);
             this.label3.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             // txtTaiKhoan
             // 
-            this.txtTaiKhoan.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtTaiKhoan.BackColor = System.Drawing.SystemColors.Window;
             this.txtTaiKhoan.Location = new System.Drawing.Point(135, 84);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(223, 20);
@@ -77,7 +77,7 @@
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtMatKhau.BackColor = System.Drawing.SystemColors.Window;
             this.txtMatKhau.Location = new System.Drawing.Point(135, 131);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(223, 20);
@@ -85,20 +85,20 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnThoat.Location = new System.Drawing.Point(261, 182);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(109, 35);
+            this.btnThoat.Size = new System.Drawing.Size(110, 33);
             this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnDangNhap.Location = new System.Drawing.Point(83, 182);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(103, 35);
+            this.btnDangNhap.Size = new System.Drawing.Size(110, 33);
             this.btnDangNhap.TabIndex = 7;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(482, 274);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.btnThoat);

@@ -163,13 +163,13 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(794, 285);
+            this.dataGridView1.Size = new System.Drawing.Size(838, 285);
             this.dataGridView1.TabIndex = 9;
             // 
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnThem.Location = new System.Drawing.Point(531, 11);
+            this.btnThem.Location = new System.Drawing.Point(475, 11);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(110, 33);
             this.btnThem.TabIndex = 10;
@@ -179,7 +179,7 @@
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnSua.Location = new System.Drawing.Point(415, 11);
+            this.btnSua.Location = new System.Drawing.Point(359, 11);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(110, 33);
             this.btnSua.TabIndex = 11;
@@ -189,7 +189,7 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnXoa.Location = new System.Drawing.Point(183, 11);
+            this.btnXoa.Location = new System.Drawing.Point(127, 11);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(110, 33);
             this.btnXoa.TabIndex = 12;
@@ -199,7 +199,7 @@
             // btnTimKiem
             // 
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.Location = new System.Drawing.Point(299, 11);
+            this.btnTimKiem.Location = new System.Drawing.Point(243, 11);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(110, 33);
             this.btnTimKiem.TabIndex = 13;
@@ -209,7 +209,7 @@
             // btnQuayLai
             // 
             this.btnQuayLai.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnQuayLai.Location = new System.Drawing.Point(67, 11);
+            this.btnQuayLai.Location = new System.Drawing.Point(11, 11);
             this.btnQuayLai.Name = "btnQuayLai";
             this.btnQuayLai.Size = new System.Drawing.Size(110, 33);
             this.btnQuayLai.TabIndex = 14;
@@ -230,7 +230,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer1.Size = new System.Drawing.Size(794, 522);
+            this.splitContainer1.Size = new System.Drawing.Size(838, 522);
             this.splitContainer1.SplitterDistance = 164;
             this.splitContainer1.TabIndex = 15;
             // 
@@ -248,7 +248,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(794, 164);
+            this.splitContainer2.Size = new System.Drawing.Size(838, 164);
             this.splitContainer2.SplitterDistance = 47;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -271,8 +271,8 @@
             this.splitContainer3.Panel2.Controls.Add(this.label4);
             this.splitContainer3.Panel2.Controls.Add(this.label5);
             this.splitContainer3.Panel2.Controls.Add(this.txtTenHang);
-            this.splitContainer3.Size = new System.Drawing.Size(794, 113);
-            this.splitContainer3.SplitterDistance = 400;
+            this.splitContainer3.Size = new System.Drawing.Size(838, 113);
+            this.splitContainer3.SplitterDistance = 422;
             this.splitContainer3.TabIndex = 0;
             // 
             // splitContainer4
@@ -289,7 +289,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer4.Size = new System.Drawing.Size(794, 354);
+            this.splitContainer4.Size = new System.Drawing.Size(838, 354);
             this.splitContainer4.SplitterDistance = 285;
             this.splitContainer4.TabIndex = 10;
             // 
@@ -305,14 +305,14 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(64, 8, 64, 8);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(794, 65);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(8);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(838, 65);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(67, 50);
+            this.button1.Location = new System.Drawing.Point(591, 11);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 33);
             this.button1.TabIndex = 15;
@@ -323,7 +323,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(183, 50);
+            this.button2.Location = new System.Drawing.Point(707, 11);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 33);
             this.button2.TabIndex = 16;
@@ -335,7 +335,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(794, 522);
+            this.ClientSize = new System.Drawing.Size(838, 522);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmHang";
             this.Text = "frmHang";
