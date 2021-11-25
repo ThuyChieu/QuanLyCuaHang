@@ -40,17 +40,20 @@ namespace QLcuahangsonnuoc.Class
             }
         }
         //Phương thức thực thi câu lệnh Select lấy dữ liệu vào bảng
-        public static DataTable GetDataToTable(string sql)
+        public static SqlDataAdapter GetDataAdapter(string sql)
         {
             SqlDataAdapter dap = new SqlDataAdapter(); //Định nghĩa đối tượng thuộc lớp SqlDataAdapter
             //Tao doi tuong thuoc lop SQL COMMAND
             dap.SelectCommand = new SqlCommand();
             dap.SelectCommand.Connection = Functions.Con;
             dap.SelectCommand.CommandText = sql;
-            //Khai báo đối tượng table thuộc lớp DataTable
-            DataTable table = new DataTable();
-            dap.Fill(table); //Đổ kết quả từ câu lệnh sql vào table
-            return table;
+            // Tự động tạo ra các câu lệnh Insert Update Delete
+            SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dap);
+            dap.InsertCommand = sqlCommandBuilder.GetInsertCommand(true);
+            dap.UpdateCommand = sqlCommandBuilder.GetUpdateCommand(true);
+            dap.DeleteCommand = sqlCommandBuilder.GetDeleteCommand(true);
+
+            return dap;
         }
         //Phương thức thực thi câu lệnh Insert, Update, Delete
         public static void RunSql(string sql)

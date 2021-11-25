@@ -31,7 +31,8 @@ namespace QLcuahangsonnuoc
         {
             string sql;
             sql = "SELECT * from KhachHang";
-            tblKH = Functions.GetDataToTable(sql); //Lấy dữ liệu từ bảng
+            tblKH = new DataTable();
+            Functions.GetDataAdapter(sql).Fill(tblKH); //Lấy dữ liệu từ bảng
             dgvKhachHang.DataSource = tblKH; //Hiển thị vào dataGridView
             dgvKhachHang.Columns[0].HeaderText = "Mã khách";
             dgvKhachHang.Columns[1].HeaderText = "Tên khách";

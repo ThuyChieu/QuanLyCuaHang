@@ -58,13 +58,16 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cmb_MaHang = new System.Windows.Forms.ComboBox();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.dtp_TimKiemTheoNgay = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btn_TimKiem = new System.Windows.Forms.Button();
             this.btn_Reset = new System.Windows.Forms.Button();
             this.total = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.btn_XoaTimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -86,6 +89,10 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel1.SuspendLayout();
+            this.splitContainer6.Panel2.SuspendLayout();
+            this.splitContainer6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
             this.splitContainer5.Panel1.SuspendLayout();
@@ -121,6 +128,7 @@
             this.txt_MaDNH.Name = "txt_MaDNH";
             this.txt_MaDNH.Size = new System.Drawing.Size(235, 20);
             this.txt_MaDNH.TabIndex = 2;
+            this.txt_MaDNH.TextChanged += new System.EventHandler(this.txt_MaDNH_TextChanged);
             // 
             // lbl_MaNhanVien
             // 
@@ -180,7 +188,7 @@
             // btn_Them
             // 
             this.btn_Them.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Them.Location = new System.Drawing.Point(11, 11);
+            this.btn_Them.Location = new System.Drawing.Point(73, 11);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(110, 33);
             this.btn_Them.TabIndex = 16;
@@ -190,18 +198,20 @@
             // 
             // btn_Sua
             // 
+            this.btn_Sua.Enabled = false;
             this.btn_Sua.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sua.Location = new System.Drawing.Point(475, 11);
+            this.btn_Sua.Location = new System.Drawing.Point(537, 11);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(110, 33);
             this.btn_Sua.TabIndex = 17;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // btn_Xoa
             // 
             this.btn_Xoa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Xoa.Location = new System.Drawing.Point(127, 11);
+            this.btn_Xoa.Location = new System.Drawing.Point(189, 11);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(110, 33);
             this.btn_Xoa.TabIndex = 18;
@@ -212,22 +222,24 @@
             // btn_Luu
             // 
             this.btn_Luu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Luu.Location = new System.Drawing.Point(243, 11);
+            this.btn_Luu.Location = new System.Drawing.Point(305, 11);
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.Size = new System.Drawing.Size(110, 33);
             this.btn_Luu.TabIndex = 19;
             this.btn_Luu.Text = "Lưu ";
             this.btn_Luu.UseVisualStyleBackColor = true;
+            this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
             // btn_QuayLai
             // 
             this.btn_QuayLai.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_QuayLai.Location = new System.Drawing.Point(359, 11);
+            this.btn_QuayLai.Location = new System.Drawing.Point(421, 11);
             this.btn_QuayLai.Name = "btn_QuayLai";
             this.btn_QuayLai.Size = new System.Drawing.Size(110, 33);
             this.btn_QuayLai.TabIndex = 20;
             this.btn_QuayLai.Text = "Quay Lại";
             this.btn_QuayLai.UseVisualStyleBackColor = true;
+            this.btn_QuayLai.Click += new System.EventHandler(this.btn_QuayLai_Click);
             // 
             // splitContainer1
             // 
@@ -465,7 +477,7 @@
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer3.Panel1.Controls.Add(this.splitContainer6);
             // 
             // splitContainer3.Panel2
             // 
@@ -473,6 +485,45 @@
             this.splitContainer3.Size = new System.Drawing.Size(836, 380);
             this.splitContainer3.SplitterDistance = 257;
             this.splitContainer3.TabIndex = 16;
+            // 
+            // splitContainer6
+            // 
+            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer6.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer6.Name = "splitContainer6";
+            this.splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer6.Panel1
+            // 
+            this.splitContainer6.Panel1.Controls.Add(this.dtp_TimKiemTheoNgay);
+            this.splitContainer6.Panel1.Controls.Add(this.label3);
+            this.splitContainer6.Panel1.Controls.Add(this.btn_XoaTimKiem);
+            // 
+            // splitContainer6.Panel2
+            // 
+            this.splitContainer6.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer6.Size = new System.Drawing.Size(836, 257);
+            this.splitContainer6.SplitterDistance = 38;
+            this.splitContainer6.TabIndex = 18;
+            // 
+            // dtp_TimKiemTheoNgay
+            // 
+            this.dtp_TimKiemTheoNgay.Location = new System.Drawing.Point(163, 10);
+            this.dtp_TimKiemTheoNgay.Name = "dtp_TimKiemTheoNgay";
+            this.dtp_TimKiemTheoNgay.Size = new System.Drawing.Size(527, 20);
+            this.dtp_TimKiemTheoNgay.TabIndex = 16;
+            this.dtp_TimKiemTheoNgay.ValueChanged += new System.EventHandler(this.dtp_TimKiemTheoNgay_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label3.Location = new System.Drawing.Point(12, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 16);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Tìm Kiếm Theo Ngày ";
             // 
             // dataGridView1
             // 
@@ -485,8 +536,9 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(836, 257);
+            this.dataGridView1.Size = new System.Drawing.Size(836, 215);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // splitContainer5
             // 
@@ -514,32 +566,19 @@
             this.flowLayoutPanel1.Controls.Add(this.btn_Luu);
             this.flowLayoutPanel1.Controls.Add(this.btn_QuayLai);
             this.flowLayoutPanel1.Controls.Add(this.btn_Sua);
-            this.flowLayoutPanel1.Controls.Add(this.btn_TimKiem);
             this.flowLayoutPanel1.Controls.Add(this.btn_Reset);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(8);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(70, 8, 8, 8);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(836, 52);
             this.flowLayoutPanel1.TabIndex = 18;
-            // 
-            // btn_TimKiem
-            // 
-            this.btn_TimKiem.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_TimKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_TimKiem.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btn_TimKiem.Location = new System.Drawing.Point(591, 11);
-            this.btn_TimKiem.Name = "btn_TimKiem";
-            this.btn_TimKiem.Size = new System.Drawing.Size(110, 33);
-            this.btn_TimKiem.TabIndex = 28;
-            this.btn_TimKiem.Text = "Tìm Kiếm";
-            this.btn_TimKiem.UseVisualStyleBackColor = true;
             // 
             // btn_Reset
             // 
             this.btn_Reset.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_Reset.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Reset.Location = new System.Drawing.Point(707, 11);
+            this.btn_Reset.Location = new System.Drawing.Point(653, 11);
             this.btn_Reset.Name = "btn_Reset";
             this.btn_Reset.Size = new System.Drawing.Size(110, 33);
             this.btn_Reset.TabIndex = 29;
@@ -568,6 +607,18 @@
             this.label11.Size = new System.Drawing.Size(76, 16);
             this.label11.TabIndex = 26;
             this.label11.Text = "Tổng Tiền:";
+            // 
+            // btn_XoaTimKiem
+            // 
+            this.btn_XoaTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btn_XoaTimKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btn_XoaTimKiem.Location = new System.Drawing.Point(696, 7);
+            this.btn_XoaTimKiem.Name = "btn_XoaTimKiem";
+            this.btn_XoaTimKiem.Size = new System.Drawing.Size(110, 25);
+            this.btn_XoaTimKiem.TabIndex = 29;
+            this.btn_XoaTimKiem.Text = "Xóa Tìm Kiếm";
+            this.btn_XoaTimKiem.UseVisualStyleBackColor = true;
+            this.btn_XoaTimKiem.Click += new System.EventHandler(this.btn_XoaTimKiem_Click);
             // 
             // frmNhap
             // 
@@ -602,6 +653,11 @@
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
+            this.splitContainer6.Panel1.ResumeLayout(false);
+            this.splitContainer6.Panel1.PerformLayout();
+            this.splitContainer6.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
+            this.splitContainer6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.splitContainer5.Panel1.ResumeLayout(false);
             this.splitContainer5.Panel2.ResumeLayout(false);
@@ -642,7 +698,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label total;
-        private System.Windows.Forms.Button btn_TimKiem;
         private System.Windows.Forms.Button btn_Reset;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.DateTimePicker dtp_NgayNhap;
@@ -652,5 +707,9 @@
         private System.Windows.Forms.NumericUpDown txt_ThanhTien;
         private System.Windows.Forms.NumericUpDown txt_Tong;
         private System.Windows.Forms.NumericUpDown txt_ChietKhau;
+        private System.Windows.Forms.SplitContainer splitContainer6;
+        private System.Windows.Forms.DateTimePicker dtp_TimKiemTheoNgay;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_XoaTimKiem;
     }
 }
