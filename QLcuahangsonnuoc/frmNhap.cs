@@ -70,10 +70,10 @@ namespace QLcuahangsonnuoc
 
             DataRow[] foundedNhapChiTiet = dataSet.Tables["Nhap_ChiTiet"].Select(string.Format("MaHH = '{0}' AND MaDNH = '{1}'", dataTable.Rows[0]["MaHH"], txt_MaDNH.Text));
 
-            if (foundedNhapChiTiet.Length == 0)
-                txt_SoLuong.Value = 0;
-            else
+            if (foundedNhapChiTiet.Length != 0)
                 txt_SoLuong.Value = decimal.Parse(foundedNhapChiTiet[0]["SoLuong"].ToString());
+            else
+                txt_SoLuong.Value = 0;
         }
 
         //Khi thay đổi số lượng thì thực hiện tính lại thành tiền và cập nhật lên bảng Nhap_ChiTiet
@@ -85,9 +85,17 @@ namespace QLcuahangsonnuoc
             tt = sl * dg;
             txt_ThanhTien.Value = tt * (1 - txt_ChietKhau.Value);
 
-            if (sl == 0) return;
-
             DataRow[] foundedRows = dataSet.Tables["Nhap_ChiTiet"].Select(string.Format("MaHH = '{0}'", cmb_MaHang.Text));
+
+            if (sl == 0)
+            {
+                if (foundedRows.Length > 0)
+                {
+                    dataSet.Tables["Nhap_ChiTiet"].Rows.Remove(foundedRows[0]);
+                    updateTong();
+                }
+                return;
+            }
 
             DataRow updatingRow = null;
             if (foundedRows.Length == 0)
@@ -114,6 +122,20 @@ namespace QLcuahangsonnuoc
             {
                 txt_Tong.Value += (int) row["ThanhTien"];
             }
+
+            DataRow[] foundedRows = dataSet.Tables["Nhap"].Select(string.Format("MaDNH = '{0}'", txt_MaDNH.Text));
+            if (foundedRows.Length > 0)
+            {
+                foundedRows[0]["MaDNH"] = txt_MaDNH.Text;
+                foundedRows[0]["MaNV"] = cmb_MaNV.Text;
+                foundedRows[0]["NgayNhap"] = dtp_NgayNhap.Value;
+                foundedRows[0]["Tong"] = int.Parse(txt_Tong.Text);
+
+                double tongCong = int.Parse(txt_Tong.Text) * (1 - double.Parse(txt_ChietKhau.Text));
+                foundedRows[0]["TongCong"] = tongCong;
+                foundedRows[0]["MaNCC"] = cmb_MaNCC.Text;
+                foundedRows[0]["ChietKhau"] = double.Parse(txt_ChietKhau.Text);
+            }
         }
 
         private void btn_Reset_Click(object sender, EventArgs e)
@@ -134,23 +156,39 @@ namespace QLcuahangsonnuoc
         {
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
-                dataGridView1.Rows.Remove(row);
+                removeRowInDataGridView(row);
             }
+        }
+
+        private void removeRowInDataGridView(DataGridViewRow row)
+        {
+            string maDNH = row.Cells["MaDNH"].Value.ToString();
+            getNhapChiTietTable(maDNH);
+
+            foreach (DataRow need2DeleteNhapChiTiet in dataSet.Tables["Nhap_ChiTiet"].Rows)
+                need2DeleteNhapChiTiet.Delete();
+
+            DataRow need2DeleteNhapRow = dataSet.Tables["Nhap"].Select(string.Format("MaDNH = '{0}'", maDNH))[0];
+            need2DeleteNhapRow.Delete();
         }
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(dataSet.Tables["Nhap"].Rows.Count);
-            dapNhap.Update(dataSet, "Nhap");
             dapNhapChiTiet.Update(dataSet, "Nhap_ChiTiet");
+            dapNhap.Update(dataSet, "Nhap");
         }
 
         private void txt_MaDNH_TextChanged(object sender, EventArgs e)
         {
+            getNhapChiTietTable(txt_MaDNH.Text);
+        }
+
+        private void getNhapChiTietTable(string maDNH)
+        {
             if (dataSet.Tables["Nhap_ChiTiet"] != null)
                 dataSet.Tables["Nhap_ChiTiet"].Clear();
 
-            dapNhapChiTiet = Functions.GetDataAdapter(string.Format("SELECT * FROM Nhap_ChiTiet WHERE MaDNH = '{0}'", txt_MaDNH.Text));
+            dapNhapChiTiet = Functions.GetDataAdapter(string.Format("SELECT * FROM Nhap_ChiTiet WHERE MaDNH = '{0}'", maDNH));
             dapNhapChiTiet.Fill(dataSet, "Nhap_ChiTiet");
         }
 
@@ -179,17 +217,17 @@ namespace QLcuahangsonnuoc
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
             txt_MaDNH.Text = row.Cells["MaDNH"].Value.ToString();
             cmb_MaNV.Text = row.Cells["MaNV"].Value.ToString();
             cmb_MaNCC.Text = row.Cells["MaNCC"].Value.ToString();
-            dtp_NgayNhap.Value = (DateTime) row.Cells["NgayNhap"].Value;
+            dtp_NgayNhap.Value = (DateTime)row.Cells["NgayNhap"].Value;
             txt_ChietKhau.Value = decimal.Parse(row.Cells["ChietKhau"].Value.ToString());
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btn_Sua.Enabled = true;
         }
     }
 }

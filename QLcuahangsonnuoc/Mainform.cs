@@ -24,7 +24,12 @@ namespace QLcuahangsonnuoc
 
         private void hóaĐơnNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            (new frmNhap()).ShowDialog();
+        }
 
+        private void Mainform_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

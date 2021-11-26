@@ -16,7 +16,7 @@ namespace QLcuahangsonnuoc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmNhap());
+            Application.Run(new DangNhap());
         }
     }
 }
