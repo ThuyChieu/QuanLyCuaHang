@@ -41,7 +41,7 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Lưu = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -61,7 +61,9 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnBoQua = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.total = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -81,6 +83,7 @@
             this.splitContainer4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -213,20 +216,20 @@
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_Lưu
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(127, 11);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 33);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Sửa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Lưu.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btn_Lưu.Location = new System.Drawing.Point(243, 11);
+            this.btn_Lưu.Name = "btn_Lưu";
+            this.btn_Lưu.Size = new System.Drawing.Size(110, 33);
+            this.btn_Lưu.TabIndex = 19;
+            this.btn_Lưu.Text = "Lưu";
+            this.btn_Lưu.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(243, 11);
+            this.button3.Location = new System.Drawing.Point(127, 11);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 33);
             this.button3.TabIndex = 20;
@@ -236,9 +239,9 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(359, 11);
+            this.button4.Location = new System.Drawing.Point(3, 3);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 33);
+            this.button4.Size = new System.Drawing.Size(99, 24);
             this.button4.TabIndex = 21;
             this.button4.Text = "Tìm Kiếm";
             this.button4.UseVisualStyleBackColor = true;
@@ -246,7 +249,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button5.Location = new System.Drawing.Point(591, 11);
+            this.button5.Location = new System.Drawing.Point(475, 11);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(110, 33);
             this.button5.TabIndex = 22;
@@ -421,11 +424,11 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Controls.Add(this.btn_Lưu);
             this.flowLayoutPanel1.Controls.Add(this.btnBoQua);
             this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel2);
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -438,7 +441,7 @@
             // 
             this.btnBoQua.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnBoQua.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnBoQua.Location = new System.Drawing.Point(475, 11);
+            this.btnBoQua.Location = new System.Drawing.Point(359, 11);
             this.btnBoQua.Name = "btnBoQua";
             this.btnBoQua.Size = new System.Drawing.Size(110, 33);
             this.btnBoQua.TabIndex = 26;
@@ -451,24 +454,44 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.total, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(707, 11);
+            this.tableLayoutPanel1.Controls.Add(this.textBox4, 0, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(704, 11);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(97, 49);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(106, 49);
             this.tableLayoutPanel1.TabIndex = 24;
             // 
-            // total
+            // textBox4
             // 
-            this.total.AutoSize = true;
-            this.total.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.total.Location = new System.Drawing.Point(3, 20);
-            this.total.Name = "total";
-            this.total.Size = new System.Drawing.Size(91, 29);
-            this.total.TabIndex = 25;
-            this.total.Text = "10 trịu";
+            this.textBox4.Location = new System.Drawing.Point(3, 23);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 9;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(3, 33);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(101, 21);
+            this.comboBox4.TabIndex = 27;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.button4, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.comboBox4, 0, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(591, 11);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.74627F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.25373F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(107, 60);
+            this.tableLayoutPanel2.TabIndex = 28;
             // 
             // frmHoaDonBan
             // 
@@ -504,6 +527,7 @@
             this.flowLayoutPanel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -523,7 +547,7 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Lưu;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
@@ -533,7 +557,6 @@
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label total;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label10;
@@ -544,5 +567,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnBoQua;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

@@ -31,5 +31,10 @@ namespace QLcuahangsonnuoc
         {
             Application.Exit();
         }
+
+        private void mnuThongKe_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -39,7 +39,6 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -155,8 +154,9 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnThem.Location = new System.Drawing.Point(11, 24);
+            this.btnThem.Location = new System.Drawing.Point(68, 24);
             this.btnThem.Name = "btnThem";
+            this.btnThem.Padding = new System.Windows.Forms.Padding(65, 8, 65, 8);
             this.btnThem.Size = new System.Drawing.Size(110, 33);
             this.btnThem.TabIndex = 9;
             this.btnThem.Text = "Thêm";
@@ -168,7 +168,7 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnSua.Location = new System.Drawing.Point(359, 24);
+            this.btnSua.Location = new System.Drawing.Point(416, 24);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(110, 33);
             this.btnSua.TabIndex = 10;
@@ -180,24 +180,12 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnXoa.Location = new System.Drawing.Point(243, 24);
+            this.btnXoa.Location = new System.Drawing.Point(300, 24);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(110, 33);
             this.btnXoa.TabIndex = 11;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnTimKiem.Location = new System.Drawing.Point(591, 24);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(110, 33);
-            this.btnTimKiem.TabIndex = 12;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
             // 
             // btnQuayLai
             // 
@@ -205,7 +193,7 @@
             this.btnQuayLai.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnQuayLai.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuayLai.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnQuayLai.Location = new System.Drawing.Point(127, 24);
+            this.btnQuayLai.Location = new System.Drawing.Point(184, 24);
             this.btnQuayLai.Name = "btnQuayLai";
             this.btnQuayLai.Size = new System.Drawing.Size(110, 33);
             this.btnQuayLai.TabIndex = 13;
@@ -235,7 +223,7 @@
             // 
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnLuu.Location = new System.Drawing.Point(475, 24);
+            this.btnLuu.Location = new System.Drawing.Point(532, 24);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(110, 33);
             this.btnLuu.TabIndex = 16;
@@ -247,7 +235,7 @@
             // 
             this.btnBoQua.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnBoQua.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnBoQua.Location = new System.Drawing.Point(707, 24);
+            this.btnBoQua.Location = new System.Drawing.Point(648, 24);
             this.btnBoQua.Name = "btnBoQua";
             this.btnBoQua.Size = new System.Drawing.Size(110, 33);
             this.btnBoQua.TabIndex = 17;
@@ -339,14 +327,13 @@
             this.flowLayoutPanel1.Controls.Add(this.btnXoa);
             this.flowLayoutPanel1.Controls.Add(this.btnSua);
             this.flowLayoutPanel1.Controls.Add(this.btnLuu);
-            this.flowLayoutPanel1.Controls.Add(this.btnTimKiem);
             this.flowLayoutPanel1.Controls.Add(this.btnBoQua);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(8);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(8);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(65, 8, 65, 8);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(838, 76);
             this.flowLayoutPanel1.TabIndex = 18;
             // 
@@ -398,7 +385,6 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnQuayLai;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label label5;

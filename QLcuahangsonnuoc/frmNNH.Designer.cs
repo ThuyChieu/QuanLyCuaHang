@@ -41,16 +41,15 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -170,7 +169,7 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnThem.Location = new System.Drawing.Point(11, 11);
+            this.btnThem.Location = new System.Drawing.Point(68, 11);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(110, 33);
             this.btnThem.TabIndex = 10;
@@ -180,7 +179,7 @@
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnSua.Location = new System.Drawing.Point(127, 11);
+            this.btnSua.Location = new System.Drawing.Point(184, 11);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(110, 33);
             this.btnSua.TabIndex = 11;
@@ -190,27 +189,17 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnXoa.Location = new System.Drawing.Point(243, 11);
+            this.btnXoa.Location = new System.Drawing.Point(300, 11);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(110, 33);
             this.btnXoa.TabIndex = 12;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.Location = new System.Drawing.Point(359, 11);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(110, 33);
-            this.btnTimKiem.TabIndex = 13;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            // 
             // btnQuayLai
             // 
             this.btnQuayLai.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnQuayLai.Location = new System.Drawing.Point(475, 11);
+            this.btnQuayLai.Location = new System.Drawing.Point(648, 11);
             this.btnQuayLai.Name = "btnQuayLai";
             this.btnQuayLai.Size = new System.Drawing.Size(110, 33);
             this.btnQuayLai.TabIndex = 14;
@@ -220,7 +209,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(591, 11);
+            this.button1.Location = new System.Drawing.Point(416, 11);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 33);
             this.button1.TabIndex = 15;
@@ -230,7 +219,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(707, 11);
+            this.button2.Location = new System.Drawing.Point(532, 11);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 33);
             this.button2.TabIndex = 16;
@@ -296,13 +285,6 @@
             this.splitContainer3.SplitterDistance = 436;
             this.splitContainer3.TabIndex = 0;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(257, 255);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
             // splitContainer4
             // 
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -326,16 +308,22 @@
             this.flowLayoutPanel2.Controls.Add(this.btnThem);
             this.flowLayoutPanel2.Controls.Add(this.btnSua);
             this.flowLayoutPanel2.Controls.Add(this.btnXoa);
-            this.flowLayoutPanel2.Controls.Add(this.btnTimKiem);
-            this.flowLayoutPanel2.Controls.Add(this.btnQuayLai);
             this.flowLayoutPanel2.Controls.Add(this.button1);
             this.flowLayoutPanel2.Controls.Add(this.button2);
+            this.flowLayoutPanel2.Controls.Add(this.btnQuayLai);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(8);
+            this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(65, 8, 50, 8);
             this.flowLayoutPanel2.Size = new System.Drawing.Size(838, 60);
             this.flowLayoutPanel2.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(257, 255);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // frmNguoiNH
             // 
@@ -388,7 +376,6 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnQuayLai;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
