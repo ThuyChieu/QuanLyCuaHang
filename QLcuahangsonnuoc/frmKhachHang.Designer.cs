@@ -50,6 +50,7 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.cboKH = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -82,7 +83,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(268, 17);
+            this.label1.Location = new System.Drawing.Point(353, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(318, 32);
             this.label1.TabIndex = 2;
@@ -145,7 +146,7 @@
             this.dgvKhachHang.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvKhachHang.Location = new System.Drawing.Point(0, 0);
             this.dgvKhachHang.Name = "dgvKhachHang";
-            this.dgvKhachHang.Size = new System.Drawing.Size(838, 316);
+            this.dgvKhachHang.Size = new System.Drawing.Size(1029, 316);
             this.dgvKhachHang.TabIndex = 8;
             this.dgvKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellContentClick);
             // 
@@ -174,6 +175,7 @@
             this.btnSua.TabIndex = 10;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -186,18 +188,20 @@
             this.btnXoa.TabIndex = 11;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnTimKiem
             // 
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnTimKiem.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnTimKiem.Location = new System.Drawing.Point(591, 24);
+            this.btnTimKiem.Location = new System.Drawing.Point(707, 24);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(110, 33);
             this.btnTimKiem.TabIndex = 12;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnQuayLai
             // 
@@ -247,12 +251,13 @@
             // 
             this.btnBoQua.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnBoQua.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnBoQua.Location = new System.Drawing.Point(707, 24);
+            this.btnBoQua.Location = new System.Drawing.Point(591, 24);
             this.btnBoQua.Name = "btnBoQua";
             this.btnBoQua.Size = new System.Drawing.Size(110, 33);
             this.btnBoQua.TabIndex = 17;
             this.btnBoQua.Text = "Reset";
             this.btnBoQua.UseVisualStyleBackColor = true;
+            this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
             // 
             // splitContainer1
             // 
@@ -268,7 +273,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(838, 561);
+            this.splitContainer1.Size = new System.Drawing.Size(1029, 561);
             this.splitContainer1.SplitterDistance = 161;
             this.splitContainer1.TabIndex = 18;
             // 
@@ -287,7 +292,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer3.Size = new System.Drawing.Size(838, 161);
+            this.splitContainer3.Size = new System.Drawing.Size(1029, 161);
             this.splitContainer3.SplitterDistance = 57;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -310,8 +315,8 @@
             this.splitContainer4.Panel2.Controls.Add(this.txtSDT);
             this.splitContainer4.Panel2.Controls.Add(this.label4);
             this.splitContainer4.Panel2.Controls.Add(this.txtDiaChi);
-            this.splitContainer4.Size = new System.Drawing.Size(838, 100);
-            this.splitContainer4.SplitterDistance = 411;
+            this.splitContainer4.Size = new System.Drawing.Size(1029, 100);
+            this.splitContainer4.SplitterDistance = 504;
             this.splitContainer4.TabIndex = 0;
             // 
             // splitContainer2
@@ -328,7 +333,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer2.Size = new System.Drawing.Size(838, 396);
+            this.splitContainer2.Size = new System.Drawing.Size(1029, 396);
             this.splitContainer2.SplitterDistance = 316;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -339,23 +344,32 @@
             this.flowLayoutPanel1.Controls.Add(this.btnXoa);
             this.flowLayoutPanel1.Controls.Add(this.btnSua);
             this.flowLayoutPanel1.Controls.Add(this.btnLuu);
-            this.flowLayoutPanel1.Controls.Add(this.btnTimKiem);
             this.flowLayoutPanel1.Controls.Add(this.btnBoQua);
+            this.flowLayoutPanel1.Controls.Add(this.btnTimKiem);
+            this.flowLayoutPanel1.Controls.Add(this.cboKH);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(8);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(8);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(838, 76);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1029, 76);
             this.flowLayoutPanel1.TabIndex = 18;
+            // 
+            // cboKH
+            // 
+            this.cboKH.FormattingEnabled = true;
+            this.cboKH.Location = new System.Drawing.Point(823, 36);
+            this.cboKH.Name = "cboKH";
+            this.cboKH.Size = new System.Drawing.Size(175, 21);
+            this.cboKH.TabIndex = 18;
             // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(838, 561);
+            this.ClientSize = new System.Drawing.Size(1029, 561);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmKhachHang";
             this.Text = "frmKhachHang";
@@ -409,5 +423,6 @@
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.ComboBox cboKH;
     }
 }

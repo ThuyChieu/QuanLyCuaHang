@@ -21,7 +21,7 @@ namespace QLcuahangsonnuoc.Class
         public static void Connect()
         {
             Con = new SqlConnection();   //Khởi tạo đối tượng
-            Con.ConnectionString = @"Data Source=DESKTOP-O0SBTDM\MSSQLSERVER01;Initial Catalog=CuaHangSon;Integrated Security=True";
+            Con.ConnectionString = @"Data Source=DESKTOP-5I1LRHO;Initial Catalog=CuaHangSon;Integrated Security=True";
             Con.Open();                  //Mở kết nối
             //Kiểm tra kết nối
             if (Con.State == ConnectionState.Open)

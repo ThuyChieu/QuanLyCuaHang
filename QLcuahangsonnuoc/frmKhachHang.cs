@@ -109,7 +109,7 @@ namespace QLcuahangsonnuoc
                 return;
             }
             //Chèn thêm
-            sql = "INSERT INTO Khach VALUES (N'" + txtMaKhachHang.Text.Trim() +
+            sql = "INSERT INTO KhachHang VALUES (N'" + txtMaKhachHang.Text.Trim() +
                 "',N'" + txtHoVaTen.Text.Trim() + "',N'" + txtDiaChi.Text.Trim() + "','" + txtSDT.Text + "')";
             Functions.RunSql(sql);
             LoadDataGridView();
@@ -121,6 +121,95 @@ namespace QLcuahangsonnuoc
             btnBoQua.Enabled = false;
             btnLuu.Enabled = false;
             txtMaKhachHang.Enabled = false;
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if (tblKH.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtMaKhachHang.Text == "")
+            {
+                MessageBox.Show("Bạn phải chọn bản ghi cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtHoVaTen.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập tên khách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtHoVaTen.Focus();
+                return;
+            }
+            if (txtDiaChi.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDiaChi.Focus();
+                return;
+            }
+            if (txtSDT.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtSDT.Focus();
+                return;
+            }
+            sql = "UPDATE KhachHang SET TenKH=N'" + txtHoVaTen.Text.Trim().ToString() + "',DiaChiKH=N'" +
+                txtDiaChi.Text.Trim().ToString() + "',SoDienThoaiKH='" + txtSDT.Text.Trim().ToString() +
+                "' WHERE MaKH=N'" + txtMaKhachHang.Text + "'";
+            Functions.RunSql(sql);
+            LoadDataGridView();
+            ResetValues();
+            btnBoQua.Enabled = false;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if (tblKH.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtMaKhachHang.Text.Trim() == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (MessageBox.Show("Bạn có muốn xoá bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                sql = "DELETE KhachHang WHERE MaKH=N'" + txtMaKhachHang.Text + "'";
+                Functions.RunSql(sql);
+                LoadDataGridView();
+                ResetValues();
+            }
+        }
+
+        private void btnBoQua_Click(object sender, EventArgs e)
+        {
+            ResetValues();
+            btnBoQua.Enabled = false;
+            btnThem.Enabled = true;
+            btnXoa.Enabled = true;
+            btnSua.Enabled = true;
+            btnLuu.Enabled = false;
+            txtMaKhachHang.Enabled = false;
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (cboKH.Text == "")
+            {
+                MessageBox.Show("Bạn phải chọn một mã hóa đơn để tìm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cboKH.Focus();
+                return;
+            }
+            txtMaKhachHang.Text = cboKH.Text;
+            LoadDataGridView();
+            btnThem.Enabled = true;
+            btnXoa.Enabled = true;
+            btnLuu.Enabled = true;
+            cboKH.SelectedIndex = -1;
         }
     }
 }
