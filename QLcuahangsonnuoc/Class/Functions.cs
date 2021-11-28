@@ -55,6 +55,19 @@ namespace QLcuahangsonnuoc.Class
 
             return dap;
         }
+        //Phương thức thực thi câu lệnh Select lấy dữ liệu vào bảng
+        public static DataTable GetDataToTable(string sql)
+        {
+            SqlDataAdapter dap = new SqlDataAdapter(); //Định nghĩa đối tượng thuộc lớp SqlDataAdapter
+            //Tao doi tuong thuoc lop SQL COMMAND
+            dap.SelectCommand = new SqlCommand();
+            dap.SelectCommand.Connection = Functions.Con;
+            dap.SelectCommand.CommandText = sql;
+            //Khai báo đối tượng table thuộc lớp DataTable
+            DataTable table = new DataTable();
+            dap.Fill(table); //Đổ kết quả từ câu lệnh sql vào table
+            return table;
+        }
         //Phương thức thực thi câu lệnh Insert, Update, Delete
         public static void RunSql(string sql)
         {
@@ -92,7 +105,18 @@ namespace QLcuahangsonnuoc.Class
             cbo.ValueMember = ma; //Trường giá trị
             cbo.DisplayMember = ten; //Trường hiển thị
         }
-
+        //trả về đường dẫn của ảnh
+        public static string GetFieldValues(string sql)
+        {
+            string ma = "";
+            SqlCommand cmd = new SqlCommand(sql, Con);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+                ma = reader.GetValue(0).ToString();
+            reader.Close();
+            return ma;
+        }
 
     }
 }

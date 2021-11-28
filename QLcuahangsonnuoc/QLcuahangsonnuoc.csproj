@@ -44,12 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CaiDatTK.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CaiDatTK.Designer.cs">
-      <DependentUpon>CaiDatTK.cs</DependentUpon>
-    </Compile>
     <Compile Include="Class\Functions.cs" />
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
@@ -62,6 +56,12 @@
     </Compile>
     <Compile Include="frmHoaDonBan.Designer.cs">
       <DependentUpon>frmHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNCC.Designer.cs">
+      <DependentUpon>frmNCC.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNhap.cs">
       <SubType>Form</SubType>
@@ -95,9 +95,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CaiDatTK.resx">
-      <DependentUpon>CaiDatTK.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +125,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

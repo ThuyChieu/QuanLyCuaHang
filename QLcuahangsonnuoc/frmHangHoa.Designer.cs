@@ -33,11 +33,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtMaHang = new System.Windows.Forms.TextBox();
             this.txtMaMau = new System.Windows.Forms.TextBox();
             this.txtTenHang = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvHangHoa = new System.Windows.Forms.DataGridView();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -46,17 +45,18 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.txtDonGiaNhap = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDonGiaBan = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cboMaHang = new System.Windows.Forms.ComboBox();
+            this.txtMaHang = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -131,14 +131,6 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Tên Hàng";
             // 
-            // txtMaHang
-            // 
-            this.txtMaHang.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMaHang.Location = new System.Drawing.Point(117, 47);
-            this.txtMaHang.Name = "txtMaHang";
-            this.txtMaHang.Size = new System.Drawing.Size(218, 20);
-            this.txtMaHang.TabIndex = 5;
-            // 
             // txtMaMau
             // 
             this.txtMaMau.BackColor = System.Drawing.SystemColors.Window;
@@ -162,17 +154,16 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(218, 20);
             this.txtSoLuong.TabIndex = 8;
-            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
             // 
-            // dataGridView1
+            // dgvHangHoa
             // 
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(838, 262);
-            this.dataGridView1.TabIndex = 9;
+            this.dgvHangHoa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHangHoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHangHoa.Location = new System.Drawing.Point(0, 0);
+            this.dgvHangHoa.Name = "dgvHangHoa";
+            this.dgvHangHoa.Size = new System.Drawing.Size(838, 262);
+            this.dgvHangHoa.TabIndex = 9;
             // 
             // btnThem
             // 
@@ -269,23 +260,61 @@
             // splitContainer3.Panel1
             // 
             this.splitContainer3.Panel1.Controls.Add(this.txtMaMau);
-            this.splitContainer3.Panel1.Controls.Add(this.txtMaHang);
             this.splitContainer3.Panel1.Controls.Add(this.label5);
             this.splitContainer3.Panel1.Controls.Add(this.label2);
+            this.splitContainer3.Panel1.Controls.Add(this.txtMaHang);
             this.splitContainer3.Panel1.Controls.Add(this.txtTenHang);
             this.splitContainer3.Panel1.Controls.Add(this.label3);
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.textBox2);
+            this.splitContainer3.Panel2.Controls.Add(this.txtDonGiaNhap);
             this.splitContainer3.Panel2.Controls.Add(this.txtSoLuong);
             this.splitContainer3.Panel2.Controls.Add(this.label7);
             this.splitContainer3.Panel2.Controls.Add(this.label4);
-            this.splitContainer3.Panel2.Controls.Add(this.textBox1);
+            this.splitContainer3.Panel2.Controls.Add(this.txtDonGiaBan);
             this.splitContainer3.Panel2.Controls.Add(this.label6);
             this.splitContainer3.Size = new System.Drawing.Size(838, 116);
             this.splitContainer3.SplitterDistance = 422;
             this.splitContainer3.TabIndex = 0;
+            // 
+            // txtDonGiaNhap
+            // 
+            this.txtDonGiaNhap.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDonGiaNhap.Location = new System.Drawing.Point(137, 46);
+            this.txtDonGiaNhap.Name = "txtDonGiaNhap";
+            this.txtDonGiaNhap.Size = new System.Drawing.Size(218, 20);
+            this.txtDonGiaNhap.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label7.Location = new System.Drawing.Point(30, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 16);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Đơn Giá Nhập";
+            // 
+            // txtDonGiaBan
+            // 
+            this.txtDonGiaBan.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDonGiaBan.Location = new System.Drawing.Point(137, 84);
+            this.txtDonGiaBan.Name = "txtDonGiaBan";
+            this.txtDonGiaBan.Size = new System.Drawing.Size(218, 20);
+            this.txtDonGiaBan.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label6.Location = new System.Drawing.Point(30, 86);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 16);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Đơn Giá Bán ";
             // 
             // splitContainer4
             // 
@@ -296,7 +325,7 @@
             // 
             // splitContainer4.Panel1
             // 
-            this.splitContainer4.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer4.Panel1.Controls.Add(this.dgvHangHoa);
             // 
             // splitContainer4.Panel2
             // 
@@ -310,9 +339,9 @@
             this.flowLayoutPanel1.Controls.Add(this.btnThem);
             this.flowLayoutPanel1.Controls.Add(this.btnSua);
             this.flowLayoutPanel1.Controls.Add(this.btnXoa);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.btnLuu);
             this.flowLayoutPanel1.Controls.Add(this.btnQuayLai);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.btnReset);
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -321,66 +350,25 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(838, 97);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // button1
+            // btnLuu
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(359, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 33);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Lưu";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnLuu.Location = new System.Drawing.Point(359, 23);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(110, 33);
+            this.btnLuu.TabIndex = 15;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnReset
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(591, 23);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 33);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label6.Location = new System.Drawing.Point(30, 86);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 16);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Đơn Giá Bán ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(137, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 20);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label7.Location = new System.Drawing.Point(30, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 16);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Đơn Giá Nhập";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.Location = new System.Drawing.Point(137, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(218, 20);
-            this.textBox2.TabIndex = 8;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnReset.Location = new System.Drawing.Point(591, 23);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(110, 33);
+            this.btnReset.TabIndex = 16;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -388,7 +376,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.btnTimKiem, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cboMaHang, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(707, 23);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -397,13 +385,21 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(112, 62);
             this.tableLayoutPanel1.TabIndex = 18;
             // 
-            // comboBox2
+            // cboMaHang
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(3, 37);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(106, 21);
-            this.comboBox2.TabIndex = 14;
+            this.cboMaHang.FormattingEnabled = true;
+            this.cboMaHang.Location = new System.Drawing.Point(3, 37);
+            this.cboMaHang.Name = "cboMaHang";
+            this.cboMaHang.Size = new System.Drawing.Size(106, 21);
+            this.cboMaHang.TabIndex = 14;
+            // 
+            // txtMaHang
+            // 
+            this.txtMaHang.BackColor = System.Drawing.SystemColors.Window;
+            this.txtMaHang.Location = new System.Drawing.Point(117, 48);
+            this.txtMaHang.Name = "txtMaHang";
+            this.txtMaHang.Size = new System.Drawing.Size(218, 20);
+            this.txtMaHang.TabIndex = 7;
             // 
             // frmHang
             // 
@@ -414,7 +410,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmHang";
             this.Text = "frmHang";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -447,11 +443,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtMaHang;
         private System.Windows.Forms.TextBox txtMaMau;
         private System.Windows.Forms.TextBox txtTenHang;
         private System.Windows.Forms.TextBox txtSoLuong;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvHangHoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
@@ -462,13 +457,14 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.TextBox txtDonGiaNhap;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDonGiaBan;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboMaHang;
+        private System.Windows.Forms.TextBox txtMaHang;
     }
 }

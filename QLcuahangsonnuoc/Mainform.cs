@@ -32,9 +32,35 @@ namespace QLcuahangsonnuoc
             Application.Exit();
         }
 
-        private void mnuThongKe_Click(object sender, EventArgs e)
+        private void mnuKhachHang_Click(object sender, EventArgs e)
         {
-
+            (new frmKhachHang()).ShowDialog();
         }
+
+        private void mnuNhanVien_Click(object sender, EventArgs e)
+        {
+            (new frmNguoiNH()).ShowDialog();
+        }
+
+        private void mnuHangHoa_Click(object sender, EventArgs e)
+        {
+            (new frmHang()).ShowDialog();
+        }
+
+        private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //(new frmNCC()).ShowDialog();
+        }
+
+        private void mnuHoaDonBan_Click(object sender, EventArgs e)
+        {
+            (new frmHoaDonBan()).ShowDialog();
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
+        }
+
     }
 }
