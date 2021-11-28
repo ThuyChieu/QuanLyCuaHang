@@ -44,7 +44,10 @@ namespace QLcuahangsonnuoc
         private void LoadDataGridView()
         {
             string sql;
-            sql = "SELECT a.MaHH, b.TenHang, a.SoLuongBan, b.DonGiaBan,a.ThanhTien FROM Xuat_ChiTiet AS a, Hang AS b WHERE a.MaDBH = N'" + txtMaHDBan.Text + "' AND a.MaHH=b.MaHH";
+            if (cboMaHDB.Text == "")
+                sql = "SELECT a.MaHH, b.TenHang, a.SoLuongBan, b.DonGiaBan,a.ThanhTien FROM Xuat_ChiTiet AS a, Hang AS b WHERE a.MaHH=b.MaHH";
+            else
+                sql = "SELECT a.MaHH, b.TenHang, a.SoLuongBan, b.DonGiaBan,a.ThanhTien FROM Xuat_ChiTiet AS a, Hang AS b WHERE a.MaDBH = N'" + txtMaHDBan.Text + "' AND a.MaHH=b.MaHH";
             tblHDB = Functions.GetDataToTable(sql);
             dgvHDBanHang.DataSource = tblHDB;
             dgvHDBanHang.Columns[0].HeaderText = "Mã hàng";
@@ -268,41 +271,12 @@ namespace QLcuahangsonnuoc
         //Phương thức này cập nhật lại danh sách các mã hóa đơn bán và lưu vào cboMaHDBan mỗi khi người dùng nháy chuột vào nút đổ xuống của cbo.
         private void cboMaHDBan_DropDown(object sender, EventArgs e)
         {
-            Functions.FillCombo("SELECT MaDBH FROM Xuat", cboMaHDB, "MaDBH", "MaDBH");
-            cboMaHDB.SelectedIndex = -1;
+            //Functions.FillCombo("SELECT MaDBH FROM Xuat", cboMaHDB, "MaDBH", "MaDBH");
         }
 
         private void dgvHDBanHang_DoubleClick(object sender, EventArgs e)
         {
-            string MaHangmx, sql;
-            Double ThanhTienmx, SoLuongmx, sl, slcon, tong, tongmoi;
-            if (tblHDB.Rows.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if ((MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
-            {
-                //Xóa hàng và cập nhật lại số lượng hàng 
-                MaHangmx = dgvHDBanHang.CurrentRow.Cells["MaHH"].Value.ToString();
-                SoLuongmx = Convert.ToDouble(dgvHDBanHang.CurrentRow.Cells["SoLuongBan"].Value.ToString());
-                ThanhTienmx = Convert.ToDouble(dgvHDBanHang.CurrentRow.Cells["ThanhTien"].Value.ToString());
-                sql = "DELETE Xuat_ChiTiet WHERE MaDBH=N'" + txtMaHDBan.Text + "' AND MaHH = N'" + MaHangmx + "'";
-                Functions.RunSql(sql);
-                // Cập nhật lại số lượng cho các mặt hàng
-                sl = Convert.ToDouble(Functions.GetFieldValues("SELECT SoLuong FROM Hang WHERE MaHH = N'" + MaHangmx + "'"));
-                slcon = sl + SoLuongmx;
-                sql = "UPDATE Hang SET SoLuong =" + slcon + " WHERE MaHH= N'" + MaHangmx + "'";
-                Functions.RunSql(sql);
-                // Cập nhật lại tổng tiền cho hóa đơn bán
-                tong = Convert.ToDouble(Functions.GetFieldValues("SELECT Tong FROM Xuat WHERE MaDBH = N'" + txtMaHDBan.Text + "'"));
-                tongmoi = tong - ThanhTienmx;
-                sql = "UPDATE Xuat SET Tong =" + tongmoi + " WHERE MaDBH = N'" + txtMaHDBan.Text + "'";
-                Functions.RunSql(sql);
-                txtTongTien.Text = tongmoi.ToString();
-                LoadDataGridView();
-
-            }
+            // Xin code lai
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -315,5 +289,6 @@ namespace QLcuahangsonnuoc
             btnLuu.Enabled = false;
             txtMaHDBan.Enabled = false;
         }
+
     }
 }

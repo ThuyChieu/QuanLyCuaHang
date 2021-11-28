@@ -206,6 +206,7 @@
             this.dgvHDBanHang.Name = "dgvHDBanHang";
             this.dgvHDBanHang.Size = new System.Drawing.Size(840, 217);
             this.dgvHDBanHang.TabIndex = 16;
+            this.dgvHDBanHang.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHDBanHang_DoubleClick);
             // 
             // btnThem
             // 

@@ -47,11 +47,6 @@ namespace QLcuahangsonnuoc
             (new frmHang()).ShowDialog();
         }
 
-        private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //(new frmNCC()).ShowDialog();
-        }
-
         private void mnuHoaDonBan_Click(object sender, EventArgs e)
         {
             (new frmHoaDonBan()).ShowDialog();
@@ -60,6 +55,11 @@ namespace QLcuahangsonnuoc
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close(); 
+        }
+
+        private void nccToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new frmNCC()).ShowDialog();
         }
 
     }

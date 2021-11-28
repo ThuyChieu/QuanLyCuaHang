@@ -81,11 +81,6 @@ namespace QLcuahangsonnuoc
             cboMaHang.SelectedIndex = -1;
         }
 
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             btnSua.Enabled = false;
@@ -212,32 +207,7 @@ namespace QLcuahangsonnuoc
                 btnSua.Enabled = true;
                 btnReset.Enabled = false;
                 btnLuu.Enabled = false;
-                txtMaHang.Enabled = false;          
-        }
-
-        private void dgvHangHoa_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (btnThem.Enabled == false)
-            {
-                MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtMaHang.Focus();
-                return;
-            }
-            if (tblHangHoa.Rows.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            txtMaHang.Text = dgvHangHoa.CurrentRow.Cells["MaHH"].Value.ToString();
-            txtMaMau.Text = dgvHangHoa.CurrentRow.Cells["MaMau"].Value.ToString();
-            txtTenHang.Text = dgvHangHoa.CurrentRow.Cells["TenHang"].Value.ToString();
-            txtSoLuong.Text = dgvHangHoa.CurrentRow.Cells["SoLuong"].Value.ToString();
-            txtDonGiaNhap.Text = dgvHangHoa.CurrentRow.Cells["DonGiaNhap"].Value.ToString();
-            txtDonGiaBan.Text = dgvHangHoa.CurrentRow.Cells["DonGiaBan"].Value.ToString();
-
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-            btnReset.Enabled = true;
+                txtMaHang.Enabled = false;
         }
 
         private void btnQuayLai_Click(object sender, EventArgs e)
@@ -256,7 +226,7 @@ namespace QLcuahangsonnuoc
             txtMaHang.Enabled = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
             ResetValues();
             if (cboMaHang.Text == "")
@@ -296,7 +266,31 @@ namespace QLcuahangsonnuoc
             dgvHangHoa.AllowUserToAddRows = false;
             dgvHangHoa.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
-        
+
+        private void dgvHangHoa_DoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (btnThem.Enabled == false)
+            {
+                MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMaHang.Focus();
+                return;
+            }
+            if (tblHangHoa.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            txtMaHang.Text = dgvHangHoa.CurrentRow.Cells["MaHH"].Value.ToString();
+            txtMaMau.Text = dgvHangHoa.CurrentRow.Cells["MaMau"].Value.ToString();
+            txtTenHang.Text = dgvHangHoa.CurrentRow.Cells["TenHang"].Value.ToString();
+            txtSoLuong.Text = dgvHangHoa.CurrentRow.Cells["SoLuong"].Value.ToString();
+            txtDonGiaNhap.Text = dgvHangHoa.CurrentRow.Cells["DonGiaNhap"].Value.ToString();
+            txtDonGiaBan.Text = dgvHangHoa.CurrentRow.Cells["DonGiaBan"].Value.ToString();
+
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            btnReset.Enabled = true;
+        }
 
     }
 }

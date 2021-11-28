@@ -58,13 +58,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btn_XoaTimKiem = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Them = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Luu = new System.Windows.Forms.Button();
             this.btn_QuayLai = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Reset = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -486,7 +486,22 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(836, 267);
             this.dataGridView1.TabIndex = 15;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btn_Them);
+            this.flowLayoutPanel1.Controls.Add(this.btn_Xoa);
+            this.flowLayoutPanel1.Controls.Add(this.btn_Luu);
+            this.flowLayoutPanel1.Controls.Add(this.btn_QuayLai);
+            this.flowLayoutPanel1.Controls.Add(this.btn_Sua);
+            this.flowLayoutPanel1.Controls.Add(this.btn_Reset);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(70, 8, 8, 8);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(836, 59);
+            this.flowLayoutPanel1.TabIndex = 18;
             // 
             // btn_Them
             // 
@@ -555,21 +570,6 @@
             this.btn_Reset.Text = "Reset";
             this.btn_Reset.UseVisualStyleBackColor = true;
             this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.btn_Them);
-            this.flowLayoutPanel1.Controls.Add(this.btn_Xoa);
-            this.flowLayoutPanel1.Controls.Add(this.btn_Luu);
-            this.flowLayoutPanel1.Controls.Add(this.btn_QuayLai);
-            this.flowLayoutPanel1.Controls.Add(this.btn_Sua);
-            this.flowLayoutPanel1.Controls.Add(this.btn_Reset);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(70, 8, 8, 8);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(836, 59);
-            this.flowLayoutPanel1.TabIndex = 18;
             // 
             // frmNhap
             // 

@@ -62,28 +62,6 @@ namespace QLcuahangsonnuoc
             txtSoDienThoai.Text = "";
         }
 
-        private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (btnThem.Enabled == false)
-            {
-                MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtMaNNH.Focus();
-                return;
-            }
-            if (tblNV.Rows.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            txtMaNNH.Text = dgvNhanVien.CurrentRow.Cells["MaNV"].Value.ToString();
-            txtTenNNH.Text = dgvNhanVien.CurrentRow.Cells["TenNV"].Value.ToString();
-            txtSoDienThoai.Text = dgvNhanVien.CurrentRow.Cells["SoDienThoaiNV"].Value.ToString();
-            txtDiaChi.Text = dgvNhanVien.CurrentRow.Cells["DiaChiNV"].Value.ToString();
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-            btnReset.Enabled = true;
-        }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             string sql;
@@ -205,6 +183,28 @@ namespace QLcuahangsonnuoc
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvNhanVien_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (btnThem.Enabled == false)
+            {
+                MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMaNNH.Focus();
+                return;
+            }
+            if (tblNV.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            txtMaNNH.Text = dgvNhanVien.CurrentRow.Cells["MaNV"].Value.ToString();
+            txtTenNNH.Text = dgvNhanVien.CurrentRow.Cells["TenNV"].Value.ToString();
+            txtSoDienThoai.Text = dgvNhanVien.CurrentRow.Cells["SoDienThoaiNV"].Value.ToString();
+            txtDiaChi.Text = dgvNhanVien.CurrentRow.Cells["DiaChiNV"].Value.ToString();
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            btnReset.Enabled = true;
         }
     }
 }

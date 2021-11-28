@@ -52,28 +52,6 @@ namespace QLcuahangsonnuoc
             dgvKhachHang.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
-        private void dgvKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (btnThem.Enabled == false)
-            {
-                MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtMaKhachHang.Focus();
-                return;
-            }
-            if (tblKH.Rows.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            txtMaKhachHang.Text = dgvKhachHang.CurrentRow.Cells["MaKH"].Value.ToString();
-            txtHoVaTen.Text = dgvKhachHang.CurrentRow.Cells["TenKH"].Value.ToString();
-            txtDiaChi.Text = dgvKhachHang.CurrentRow.Cells["DiaChiKH"].Value.ToString();
-            txtSDT.Text = dgvKhachHang.CurrentRow.Cells["SoDienThoaiKH"].Value.ToString();
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-            btnBoQua.Enabled = true;
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             btnSua.Enabled = false;
@@ -218,6 +196,28 @@ namespace QLcuahangsonnuoc
             btnXoa.Enabled = true;
             btnLuu.Enabled = true;
             cboKH.SelectedIndex = -1;
+        }
+
+        private void dgvKhachHang_DoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (btnThem.Enabled == false)
+            {
+                MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMaKhachHang.Focus();
+                return;
+            }
+            if (tblKH.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            txtMaKhachHang.Text = dgvKhachHang.CurrentRow.Cells["MaKH"].Value.ToString();
+            txtHoVaTen.Text = dgvKhachHang.CurrentRow.Cells["TenKH"].Value.ToString();
+            txtDiaChi.Text = dgvKhachHang.CurrentRow.Cells["DiaChiKH"].Value.ToString();
+            txtSDT.Text = dgvKhachHang.CurrentRow.Cells["SoDienThoaiKH"].Value.ToString();
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            btnBoQua.Enabled = true;
         }
     }
 }

@@ -225,7 +225,7 @@ namespace QLcuahangsonnuoc
             txt_ChietKhau.Value = decimal.Parse(row.Cells["ChietKhau"].Value.ToString());
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             btn_Sua.Enabled = true;
         }

@@ -101,6 +101,9 @@
     <EmbeddedResource Include="frmHoaDonBan.resx">
       <DependentUpon>frmHoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNCC.resx">
+      <DependentUpon>frmNCC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNhap.resx">
       <DependentUpon>frmNhap.cs</DependentUpon>
     </EmbeddedResource>

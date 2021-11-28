@@ -132,7 +132,7 @@
             this.dgvNCC.Name = "dgvNCC";
             this.dgvNCC.Size = new System.Drawing.Size(1006, 282);
             this.dgvNCC.TabIndex = 9;
-            this.dgvNCC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNCC_CellContentClick);
+            this.dgvNCC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNCC_CellDoubleClick);
             // 
             // btnThem
             // 

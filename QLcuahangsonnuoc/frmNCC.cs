@@ -148,28 +148,6 @@ namespace QLcuahangsonnuoc
             txtMaNCC.Enabled = false;
         }
 
-        private void dgvNCC_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (btnThem.Enabled == false)
-            {
-                MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtMaNCC.Focus();
-                return;
-            }
-            if (tblNCC.Rows.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            txtMaNCC.Text = dgvNCC.CurrentRow.Cells["MaNCC"].Value.ToString();
-            txtTenNCC.Text = dgvNCC.CurrentRow.Cells["TenNCC"].Value.ToString();
-            txtDiaChi.Text = dgvNCC.CurrentRow.Cells["DiaChiNCC"].Value.ToString();
-            txtSDT.Text = dgvNCC.CurrentRow.Cells["SoDienThoaiNCC"].Value.ToString();
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-            btnReset.Enabled = true;
-        }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string sql;
@@ -209,7 +187,26 @@ namespace QLcuahangsonnuoc
             this.Close();
         }
 
-
-
+        private void dgvNCC_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (btnThem.Enabled == false)
+            {
+                MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMaNCC.Focus();
+                return;
+            }
+            if (tblNCC.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            txtMaNCC.Text = dgvNCC.CurrentRow.Cells["MaNCC"].Value.ToString();
+            txtTenNCC.Text = dgvNCC.CurrentRow.Cells["TenNCC"].Value.ToString();
+            txtDiaChi.Text = dgvNCC.CurrentRow.Cells["DiaChiNCC"].Value.ToString();
+            txtSDT.Text = dgvNCC.CurrentRow.Cells["SoDienThoaiNCC"].Value.ToString();
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            btnReset.Enabled = true;
+        }
     }
 }

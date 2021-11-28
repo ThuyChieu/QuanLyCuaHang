@@ -45,6 +45,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.txtMaHang = new System.Windows.Forms.TextBox();
             this.txtDonGiaNhap = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDonGiaBan = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cboMaHang = new System.Windows.Forms.ComboBox();
-            this.txtMaHang = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -164,6 +164,7 @@
             this.dgvHangHoa.Name = "dgvHangHoa";
             this.dgvHangHoa.Size = new System.Drawing.Size(838, 262);
             this.dgvHangHoa.TabIndex = 9;
+            this.dgvHangHoa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHangHoa_DoubleClick);
             // 
             // btnThem
             // 
@@ -174,6 +175,7 @@
             this.btnThem.TabIndex = 10;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -184,6 +186,7 @@
             this.btnSua.TabIndex = 11;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -194,6 +197,7 @@
             this.btnXoa.TabIndex = 12;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnTimKiem
             // 
@@ -204,6 +208,7 @@
             this.btnTimKiem.TabIndex = 13;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnQuayLai
             // 
@@ -214,6 +219,7 @@
             this.btnQuayLai.TabIndex = 14;
             this.btnQuayLai.Text = "Quay Lại";
             this.btnQuayLai.UseVisualStyleBackColor = true;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
             // splitContainer1
             // 
@@ -277,6 +283,14 @@
             this.splitContainer3.Size = new System.Drawing.Size(838, 116);
             this.splitContainer3.SplitterDistance = 422;
             this.splitContainer3.TabIndex = 0;
+            // 
+            // txtMaHang
+            // 
+            this.txtMaHang.BackColor = System.Drawing.SystemColors.Window;
+            this.txtMaHang.Location = new System.Drawing.Point(117, 48);
+            this.txtMaHang.Name = "txtMaHang";
+            this.txtMaHang.Size = new System.Drawing.Size(218, 20);
+            this.txtMaHang.TabIndex = 7;
             // 
             // txtDonGiaNhap
             // 
@@ -359,6 +373,7 @@
             this.btnLuu.TabIndex = 15;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnReset
             // 
@@ -369,6 +384,7 @@
             this.btnReset.TabIndex = 16;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -392,14 +408,7 @@
             this.cboMaHang.Name = "cboMaHang";
             this.cboMaHang.Size = new System.Drawing.Size(106, 21);
             this.cboMaHang.TabIndex = 14;
-            // 
-            // txtMaHang
-            // 
-            this.txtMaHang.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMaHang.Location = new System.Drawing.Point(117, 48);
-            this.txtMaHang.Name = "txtMaHang";
-            this.txtMaHang.Size = new System.Drawing.Size(218, 20);
-            this.txtMaHang.TabIndex = 7;
+            this.cboMaHang.Click += new System.EventHandler(this.cboMaHang_DropDown);
             // 
             // frmHang
             // 
@@ -410,6 +419,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmHang";
             this.Text = "frmHang";
+            this.Load += new System.EventHandler(this.frmHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
