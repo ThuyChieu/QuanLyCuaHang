@@ -14,9 +14,7 @@ namespace QLcuahangsonnuoc
 {
     public partial class DangNhap : Form
     {
-        DataSet dataSet = new DataSet("TaiKhoanCDangIu");
-        SqlDataAdapter accountAdapter;
-
+        string Scon = "Data Source=DESKTOP-5I1LRHO;Initial Catalog=CuaHangSon;Integrated Security=True";
         public DangNhap()
         {
             InitializeComponent();
@@ -24,8 +22,12 @@ namespace QLcuahangsonnuoc
 
         private void DangNhap_Load(object sender, EventArgs e)
         {
-            accountAdapter = Functions.GetDataAdapter("SELECT * FROM TAIKHOAN");
-            accountAdapter.Fill(dataSet, "TAIKHOAN");
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -36,28 +38,25 @@ namespace QLcuahangsonnuoc
                 return;
             }
             else
-            {
-                DataRow[] foundedAccounts = dataSet.Tables["TAIKHOAN"].Select(string.Format("TaiKhoan = '{0}'", txtTaiKhoan.Text));
-                if (foundedAccounts.Length == 0)
-                {
-                    MessageBox.Show("Không tìm thấy Tài Khoản này!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+            {     
+                    string tk = txtTaiKhoan.Text;
+                    string mk = txtMatKhau.Text;
+                    string sqlSelect = "select * from TAIKHOAN where TaiKhoan ='" + tk + "' and MatKhau='" + mk + "'";
+                    SqlCommand cmd = new SqlCommand(sqlSelect);
+                    SqlDataReader dta = cmd.ExecuteReader();
+                    if (dta.Read() == true)
+                    {
+                        this.Hide();
+                        Form Mainform = new Mainform();
+                        Mainform.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tài Khoản hoặc Mật Khẩu không đúng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtMatKhau.Text = "";
+                    }
 
-                if (foundedAccounts[0]["MatKhau"].ToString() != txtMatKhau.Text)
-                {
-                    MessageBox.Show("Sai mật khẩu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                (new Mainform()).Show();
-                this.Hide();
             }
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close(); 
         }
     }
 }

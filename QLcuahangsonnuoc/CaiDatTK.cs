@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace QLcuahangsonnuoc
 {
-    public partial class frmNhap : Form
+    public partial class CaiDatTK : Form
     {
-        public frmNhap()
+        public CaiDatTK()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

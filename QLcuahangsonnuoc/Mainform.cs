@@ -24,43 +24,7 @@ namespace QLcuahangsonnuoc
 
         private void hóaĐơnNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new frmNhap()).ShowDialog();
-        }
 
-        private void Mainform_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
         }
-
-        private void mnuKhachHang_Click(object sender, EventArgs e)
-        {
-            (new frmKhachHang()).ShowDialog();
-        }
-
-        private void mnuNhanVien_Click(object sender, EventArgs e)
-        {
-            (new frmNguoiNH()).ShowDialog();
-        }
-
-        private void mnuHangHoa_Click(object sender, EventArgs e)
-        {
-            (new frmHang()).ShowDialog();
-        }
-
-        private void mnuHoaDonBan_Click(object sender, EventArgs e)
-        {
-            (new frmHoaDonBan()).ShowDialog();
-        }
-
-        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close(); 
-        }
-
-        private void nccToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            (new frmNCC()).ShowDialog();
-        }
-
     }
 }
